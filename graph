@@ -1,0 +1,49 @@
+digraph "Graph" {
+	graph [nodesep=1 ranksep=2 splines=false]
+	edge [arrowhead=none color="#707070"]
+	subgraph cluster_input {
+		color=white
+		1 [label="LSTM
+shape= 10000" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	1 -> 2
+	subgraph cluster_1 {
+		color=white
+		2 [label="LSTM Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	2 -> 3
+	subgraph cluster_2 {
+		color=white
+		3 [label="BatchNormalization Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	3 -> 4
+	subgraph cluster_3 {
+		color=white
+		4 [label="LSTM Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	4 -> 5
+	subgraph cluster_4 {
+		color=white
+		5 [label="BatchNormalization Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	5 -> 6
+	subgraph cluster_5 {
+		color=white
+		6 [label="LSTM Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	6 -> 7
+	subgraph cluster_6 {
+		color=white
+		7 [label="BatchNormalization Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	7 -> 8
+	subgraph cluster_output {
+		777 [label="Output Units: 1
+Activation: sigmoid" color=white fontcolor=black fontsize=18 shape=rectangle]
+		color=white
+		rank=same
+		labeljust=1
+		8 [color="#e74c3c" fontcolor="#e74c3c" shape=circle style=filled]
+	}
+	arrowShape=none
+}
